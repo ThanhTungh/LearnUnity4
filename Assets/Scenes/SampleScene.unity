@@ -6712,7 +6712,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 11
       m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 3
+      m_TileMatrixIndex: 4
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -7071,6 +7071,24 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: -2.303367e-38
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 3e-45
+      e20: 0
+      e21: 0
+      e22: -2.1197008e-24
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 5.16e-43
+      e33: 0
   - m_RefCount: 1
     m_Data:
       e00: 0.000000059604645
@@ -7089,24 +7107,6 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 0
-    m_Data:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: -2.2991653e-38
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 3e-45
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
   m_TileColorArray:
   - m_RefCount: 58
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -7144,6 +7144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336335650}
   - component: {fileID: 1336335651}
+  - component: {fileID: 1336335652}
   m_Layer: 0
   m_Name: Prisoner
   m_TagString: Untagged
@@ -7160,7 +7161,7 @@ Transform:
   m_GameObject: {fileID: 1336335649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.94, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7176,7 +7177,7 @@ Animator:
   m_GameObject: {fileID: 1336335649}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30158016fb927aa47929729dd1a03569, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7187,6 +7188,58 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1336335652
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336335649}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 440850039
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -991514675, guid: ab84831bf3de5a948a265de6787e6295, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1414050438
 GameObject:
   m_ObjectHideFlags: 0
