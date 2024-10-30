@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D myCapsuleCollider;
     [SerializeField] float speed = 5;
     [SerializeField] float jumpSpeed = 5;
+    [SerializeField] float climbSpeed = 5;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +25,19 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+        ClimbLadder();
+    }
+
+    private void ClimbLadder()
+    {
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))//ko cham vao 1 layer nao do thi return (ko chay function nua)
+        {
+            rb.gravityScale = 8;
+            return;
+        }
+        rb.velocity = new Vector2(rb.velocity.x, moveInput.y * climbSpeed);
+        rb.gravityScale = 0;
+
     }
 
     private void FlipSprite()
@@ -42,14 +56,15 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnJump(InputValue value)
     {
-        if(!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
             return;
         }
         if (value.isPressed)
         {
             rb.velocity += new Vector2(0f, jumpSpeed);
         }
-        
+
     }
     void Run()
     {
