@@ -33,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
         if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))//ko cham vao 1 layer nao do thi return (ko chay function nua)
         {
             rb.gravityScale = 8;
+            myAnimator.SetBool("IsClimbing", false);
             return;
         }
         rb.velocity = new Vector2(rb.velocity.x, moveInput.y * climbSpeed);
         rb.gravityScale = 0;
 
+        bool PlayerHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+        myAnimator.SetBool("IsClimbing", PlayerHasVerticalSpeed);
     }
 
     private void FlipSprite()
