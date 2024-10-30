@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D rb;
     Animator myAnimator;
+    CapsuleCollider2D myCapsuleCollider;
     [SerializeField] float speed = 5;
+    [SerializeField] float jumpSpeed = 5;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -36,7 +39,17 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
+    }
+    void OnJump(InputValue value)
+    {
+        if(!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+            return;
+        }
+        if (value.isPressed)
+        {
+            rb.velocity += new Vector2(0f, jumpSpeed);
+        }
+        
     }
     void Run()
     {
@@ -47,7 +60,5 @@ public class PlayerMovement : MonoBehaviour
         bool PlayerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
         myAnimator.SetBool("IsRunning", PlayerHasHorizontalSpeed);
-
-
     }
 }

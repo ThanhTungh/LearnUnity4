@@ -6260,7 +6260,7 @@ GameObject:
   - component: {fileID: 540215861}
   - component: {fileID: 540215863}
   - component: {fileID: 540215862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platforms Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7290,6 +7290,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 66160961128406574, guid: 76fcf505567affc4d9f52e385ddcedcd, type: 3}
+      propertyPath: m_GravityScale
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 66160961128406574, guid: 76fcf505567affc4d9f52e385ddcedcd, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3319151412458936755, guid: 76fcf505567affc4d9f52e385ddcedcd, type: 3}
       propertyPath: m_Name
       value: Prisoner
@@ -7393,6 +7401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpSpeed: 25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
