@@ -13,9 +13,9 @@ TagManager:
   - UI
   - Ground
   - Climbing
-  - 
-  - 
-  - 
+  - Spike
+  - Player
+  - Background
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 440850039
+    locked: 0
+  - name: Spike
+    uniqueID: 2052160961
     locked: 0
